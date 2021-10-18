@@ -1,0 +1,14 @@
+version: '3.3'
+services:
+  db:
+    image: postgres:14
+    restart: always
+    ports:
+      - 5432:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: otus_psql
+      POSTGRES_PASSWORD: password123
+      POSTGRES_USER: otus_psql
+      POSTGRES_HOST_AUTH_METHOD: scram-sha-256
